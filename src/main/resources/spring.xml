@@ -19,11 +19,11 @@
     <bean id = "consoleEventLogger" class="com.yet.spring.core.loggers.ConsoleEventLogger"/>
 
     <bean id = "fileEventLogger" class="com.yet.spring.core.loggers.FileEventLogger" init-method="init">
-        <constructor-arg value="target.events-log"/>
+        <constructor-arg value="target.events_log.txt"/>
     </bean>
 
     <bean id="cacheFileEventLogger" class="com.yet.spring.core.loggers.CacheFileEventLogger" destroy-method="destroy">
-        <constructor-arg value="target.events-log"/>
+        <constructor-arg value="target.events_log.txt"/>
         <constructor-arg value="5"/>
     </bean>
 
