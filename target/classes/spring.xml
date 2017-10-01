@@ -8,13 +8,20 @@
     <import resource="loggers.xml"/>
 
     <bean id = "app" class = "com.yet.spring.core.App">
-        <constructor-arg ref = "client"/>
-        <constructor-arg ref="consoleEventLogger"/>
+        <constructor-arg ref="client"/>
+        <constructor-arg ref="cacheFileEventLogger"/>
+        <constructor-arg>
+            <map>
+                <entry key="INFO" value="consoleEventLogger"/>
+                <entry key="ERROR" value="combinedEventLogger"/>
+            </map>
+        </constructor-arg>
     </bean>
 
     <bean id = "client" class="com.yet.spring.core.beans.Client">
         <constructor-arg value="1"/>
         <constructor-arg value="John Smith"/>
+        <property name = "greeting" value="Hello world"/>
     </bean>
 
 
@@ -26,7 +33,5 @@
     </bean>
 
     <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
-
-
 
 </beans>
