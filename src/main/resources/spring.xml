@@ -8,8 +8,14 @@
     <import resource="loggers.xml"/>
 
     <bean id = "app" class = "com.yet.spring.core.App">
-        <constructor-arg ref = "client"/>
-        <constructor-arg ref="consoleEventLogger"/>
+        <constructor-arg ref="client"/>
+        <constructor-arg ref="cacheFileEventLogger"/>
+        <constructor-arg>
+            <map>
+                <entry key="INFO" value="consoleEventLogger"/>
+                <entry key="ERROR" value="combinedEventLogger"/>
+            </map>
+        </constructor-arg>
     </bean>
 
     <bean id = "client" class="com.yet.spring.core.beans.Client">

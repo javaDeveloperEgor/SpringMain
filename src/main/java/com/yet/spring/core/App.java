@@ -25,7 +25,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        @SuppressWarnings("resource")
+
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
         App app = (App)ctx.getBean("app");
 

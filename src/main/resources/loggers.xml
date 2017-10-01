@@ -17,5 +17,14 @@
         <constructor-arg index="1" value="12"/>
     </bean>
 
+    <bean id="combinedEventLogger" class="com.yet.spring.core.loggers.CombinedEventLogger">
+        <constructor-arg>
+            <list>
+                <ref bean="consoleEventLogger"/>
+                <ref bean="fileEventLogger"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
 
 </beans>
